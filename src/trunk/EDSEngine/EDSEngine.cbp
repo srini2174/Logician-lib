@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="EDSEngine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/EDSEngine" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DUSE_LIBXML" />
+					<Add option="-DUSE_JAVASCRIPT" />
+					<Add option="-DNOPYTHON" />
+					<Add option="-DPOSIX" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/EDSEngine" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-DUSE_LIBXML" />
+					<Add option="-DUSE_JAVASCRIPT" />
+					<Add option="-DNOPYTHON" />
+					<Add option="-DPOSIX" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-DUSE_LIBXML" />
+			<Add option="-DUSE_JAVASCRIPT" />
+			<Add option="-DNOPYTHON" />
+			<Add option="-DPOSIX" />
+			<Add directory="/usr/include/libxml2" />
+			<Add directory="/usr/include/js" />
+		</Compiler>
+		<Linker>
+			<Add library="mozjs185" />
+			<Add library="xml2" />
+		</Linker>
+		<Unit filename="Bimapper.cpp" />
+		<Unit filename="Bimapper.h" />
+		<Unit filename="Decode.cpp" />
+		<Unit filename="Decode.h" />
+		<Unit filename="EDSEngine.cpp" />
+		<Unit filename="KnowledgeBase.cpp" />
+		<Unit filename="KnowledgeBase.h" />
+		<Unit filename="Numerics.h" />
+		<Unit filename="RuleCell.h" />
+		<Unit filename="RuleTable.cpp" />
+		<Unit filename="RuleTable.h" />
+		<Unit filename="TableSet.cpp" />
+		<Unit filename="TableSet.h" />
+		<Unit filename="XMLWrapper.h" />
+		<Unit filename="ashost.cpp" />
+		<Unit filename="ashost.h" />
+		<Unit filename="stdafx.cpp" />
+		<Unit filename="stdafx.h" />
+		<Unit filename="utilities.cpp" />
+		<Unit filename="utilities.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

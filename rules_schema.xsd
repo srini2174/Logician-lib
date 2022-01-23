@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element maxOccurs="unbounded" name="Inputs">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Attr" type="xs:string" />
+                      <xs:element maxOccurs="unbounded" name="Value">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="id" type="xs:string" use="optional" />
+                              <xs:attribute name="operation" type="xs:unsignedShort" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="Outputs">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Attr" type="xs:string" />
+                      <xs:element maxOccurs="unbounded" name="Value">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="id" type="xs:string" use="optional" />
+                              <xs:attribute name="operation" type="xs:unsignedShort" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="FormulaInput" type="xs:string" />
+              </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="getall" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Translations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="String">
+                <xs:complexType>
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="en-US" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Scripting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Python" type="xs:string" />
+              <xs:element name="Javascript" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="debug" type="xs:boolean" use="required" />
+	    <xs:attribute name="debugtables" type="xs:string" use="required" />
+      <xs:attribute name="connection" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

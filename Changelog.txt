@@ -1,0 +1,112 @@
+1/29/2017
+Updated tutorial and licensing information (removed commercial license, all Free and Open Source Software). 
+Cleaned up the builds and moved to GIT repository for primary source code control.
+
+3.0.0 - 7/29/2015
+Lots of changes to support inheritance patterns in the ROMNode and LinearEngine libraries.
+All string handling in std::string, UTF8.
+Upgraded EDSEngine C++ library with a multi-threaded table solver (C++)
+WinRT libraries removed. You can call the native C++ libs from RT, so there is really no benefit to that interface, especially since a C# and Javascript port are already available.
+A CMake build script is now available for both Linux and Windows.
+
+2.1.1 - 12/16/2014 
+Bug #19 - Fixed concurrency issue when multiple threads evaluate the same table.  Also fixed a typo in a previous fix to the ROM GetRoot function.
+
+2.1 - 12/15/2014
+Accumulation of minor bugfixes and addition of some minor features such as prototype based inheritence pattern in JavaScript implementation.  Added "Value" to represent current attribute value in the ROM DictionaryAttr class for use in databinding situations.
+
+2.0 - 3/26/2014
+Library is now threadsafe and makes use of C++11 concepts.  Some API changes, see user documentation.  Suuport for Silverlight and Flash wrappers dropped.
+
+1.3.4 - 12/30/2013
+Bug #18 - Fixed Clone function in ROM C++ and JavaScript.
+Updated JavaScript components for IE11.
+Enforced non-copyable pattern on C++ ROM.  ROM is designed to be a polymorphic base object.
+
+1.3.3 - 9/11/2013
+Bug #16 - Fixed a possible error in DecisionLogic editor Find/Replace dialog.  Also eliminated carriage returns from pasted text.
+
+1.3.2 - 7/30/2013
+Fixed an issue in the C++ implementation of RelationalObjectModel where reserved XML characters were not properly escaped.
+
+1.3.1 - 7/13/2013
+Major performance boost for EDSEngine C++ library.  4-fold increase in some benchmarks.
+
+1.3 - 5/7/2013
+Fixed copy-paste issue in DecisionLogic under Linux: #14
+Fixed file handling issues when renaming files, or re-adding previously removed files to a DecisionLogic project
+Made attribute handling functions of Relational Object Modeler virtual
+
+1.2.2 - 4/10/2013
+Fixed a freeze when saving a table in DecisionLogic with a malformed "get()" expression, where the closing parenthesis is missing: #3610507
+
+1.2.1 - 4/8/2013
+Fixed possible memory leak when debugging EDSEngine table evaluations.
+Upgraded boost libraries to v1.53.
+Added Code::Blocks project files
+
+v1.2 - 3/15/2013
+Added support for 64-bit applications.
+New WinRT wrapper libraries.
+Javascript backend updated to use IE10 (Chakra) on Windows if available.
+
+v1.1.7 - 12/28/2012
+Fixed a crash in DecisionLogic when inserting a table into a new group: #3598709
+
+v1.1.6 - 11/13/2012
+Fixed issue with EDIT attributes when no rule table is defined, attribute should allow any value: #3586609
+
+v1.1.5 - 10/22/2012
+Fixed bug with EDIT attribute numeric range evaluation: #3579038
+
+v1.1.4 - 9/25/2012
+Fixed leak/crash issue in DestroyObject (C++): #3571423
+
+v1.1.3 - 8/30/2012
+Fixed issue with ROM SaveXML output when attribute values contain reservered XML characters/escapes. #3563153
+
+v1.1.2 - 8/15/2012
+Fixed problem with reserved character #, it should only be reserved for edit attribute types: #3558119
+
+v1.1.1 - 7/10/2012
+Fixed DecisionLogic not allowing disable of first table rule in compiled output: #3542354 
+Fixed ROM SaveXML not outputting correctly after a call to RemoveAttribute: #3542353
+
+v1.1.0 - 7/9/2012
+Updated Mozilla Javascript engine linkage to version 1.8.5, Python 2.7, boost 1.47, libxml2 2.7.8, and libxslt 1.1.26.
+Updated Linux builds for compatibility with Ubuntu 12.
+Removed dependencies on zlib and win32 calls for UUID generation.  These features are now handled by the boost C++ libraries for all platforms.  This fixes issues with mixed mode debugging under VS2008.
+New tables in DecisionLogic will default to "GetAll" style.
+Fixed the wording of the Remove/Delete DecisionLogic table prompts.
+Fixed some build paths and library names to remove whitespace for Linux build compatibility.
+
+v1.0.6 - 6/27/2012
+Fixed issue with boolean enabled/disabled property not set correctly after reset: #3538455
+Fixed file overwrite problem in DecisionLogic when inserting an existing table file: #3538557 
+Table with no inputs always behaves as GetAll regardless of selected behaviour: #3538577
+Altered the VS2008 project include paths to be more compatible with Windows SDK command line build system
+
+v1.0.5 - 6/9/2012
+Fixed issue with subsequent dependencies setting the ChangedByUser flag incorrectly due to recursion issue
+Fixed help HTML file link in DecisionLogic
+
+v1.0.4 - 6/7/2012
+Allow BOOLEAN types to set a default value directly in the LinearEngine dictionary
+Prevent DecisionLogic from overwriting table files when compiling to XML
+Cache last filename of compiled output in DecisionLogic
+
+v1.0.3 - 6/5/2012
+Allow BOOLEAN types to omit rule table output in the LinearEngine dictionary
+Fixed BOOLEAN type initialization bug
+Prevent errors when calling into the libraries for invalid table names
+
+v1.0.2 - 5/24/2012
+Added Visual Studio 2012 project files and build script
+Fixed reset issue in JavaScript evaluation of SINGLESELECT attribute types in the LinearEngine functions
+Fixed copy-paste bug in DecisionLogic when copying many cells between multiple tables/MS Excel
+Sorted attribute display alphabetically in the debugging controls
+Made some changes to support wxWidgets 2.9.x beta when compiling DeicsionLogic in VS2010.  This is for future use, standard is still VS2008+wxWidgets 2.8.x  
+Added new resetting/invalidation behaviours to the LinearEngine component
+
+v1.0.1 - 6/1/2011
+Fixed an issue with the way strings were de-tokenized in JavaScript in order to improve performance of the rule table evaluation

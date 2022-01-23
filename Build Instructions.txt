@@ -1,0 +1,74 @@
+Build Instructions for client-based tools:
+
+Logician relies upon open source and freely available cross-platform tools, so you shouldn't have too much trouble compiling it regardless of your OS.  Visual Studio and CMake project files are provided for your compiling convenience on your platform of choice.
+
+CMake tips:
+On Windows, you may need to specify to CMake the directory in which you install/copy the libxml2, libxslt and iconv libraries used by the DecisionLogic compiler, and optionally the rules engine.  If you extract the provided "WindowsBuildTools" to the trunk directory, your CMake arguments may look like:
+
+cmake -DLIBXML2_INCLUDE_DIR=C:\Users\Eric\Documents\Development\Logician\src\trunk\libxml2-2.7.8.win32\include -DLIBXML2_LIBRARIES=C:\Users\Eric\Documents\Development\Logician\src\trunk\libxml2-2.7.8.win32\lib\libxml2_a.lib -DICONV_INCLUDE_DIR=C:\Users\Eric\Documents\Development\Logician\src\trunk\iconv-1.9.2.win32\include -DICONV_LIBRARIES=C:\Users\Eric\Documents\Development\Logician\src\trunk\iconv-1.9.2.win32\lib\iconv_a.lib ..
+
+Prerequisites:
+Rules Engine: EDSEngine
+All platforms: 
+- boost C++ libraries v1.55+ (optional, for integrated DecisionLogic debugging)
+- iconv v1.9.2 (GCC builds)
+- libxml2 v2.7.8+ (GCC builds)
+- libxslt v1.1.26+ (GCC builds)
+- Python 2.6+ (optional compile-time switch, disabled in default windows build configuration)
+- Mozilla Spidermonkey Javascript engine 1.85 (libmozjs185-1.0 optional compile-time switch).  Windows builds the integrated Windows Scripting or Chakra, depending on what is available on the host.
+Windows:
+- MSXML v6.0 (preferred build in lieu of libxml, libxslt, and iconv)
+
+Rule Table Builder GUI: DecisionLogic
+All platforms:
+- wxWidgets GUI toolkit v3.0+
+- iconv v1.9.2
+- libxml2 v2.7.8+
+
+C++ Dynamic application modeler: Relational Object Model
+All platforms:
+- iconv v1.9.2 (GCC builds)
+- libxml2 v2.7.8+ (GCC builds)
+- libxslt v1.1.26+ (GCC builds)
+- EDSEngine v1.0
+Windows:
+- MSXML v6.0 (preferred build in lieu of libxml, libxslt, and iconv)
+
+Windows .NET tools:
+.NET Rules Engine: EDSEngineNET (C++/CLI wrapper implementation)
+- .NET 3.5+
+- EDSEngine v1.0
+
+.NET Relational Object Model Wrapper: ROMNET (C++/CLI wrapper implementation)
+- .NET 3.5+
+- EDSEngine v1.0
+- Relation Object Model v1.0
+
+WinRT wrappers have the same basic requirements as .NET.  If you can build the base C++ libraries, VS2012 will have no problem building the wrappers.
+
+Android/iPhone notes:
+- An example project utilizing the Google Android SDK and the Open Source "PhoneGap" project is provided.  PhoneGap enables you to write cross-platform mobile applications utilizing HTML5 and Javascript tools.  As such, the example shows how the Javascript libraies can be utilized for mobile development.  See http://www.phonegap.com for details.  Additionally, the C++ library should be useable by iPhone developers with Objective-C++, however this has not currently been tested or confirmed.
+
+
+C++ Build Notes
+Important pre-processor defines for EDSEngine/Relational Object Model:
+USE_MSXML: on widows platform, enables use of MSXML 6.0
+USE_LIBXML: optional on windows, required on all other platforms to enable use of libxml2 and libxslt.
+USE_PYTHON: enables python runtime scripting support in rules.  You will need the Python and Boost libraries.  On Windows this may mean you will have to distribute the boost-python DLL along with your compiled code.
+USE_JAVASCRIPT: enables javascript runtime scripting support in rules
+USE_WINDOWS_SCRIPTING: on windows when javascript support is enabled, uses the windows scripting host for processing instead of spidermonkey, thereby eliminating that dependency.  If the IE10 (Chakra) engine is available on your OS, that engine will be preferred.
+POSIX: compliant (Linux) environments should enable this define
+DISABLE_DECISIONLOGIC_INTEGRATION: In the EDSEngine build, adding this define to a build will disable intergrated DeicisionLogic debugging over a TCP Socket connection.  It's a handy feature to keep around, but you can eliminate this boost library dependency if you wish.
+Windows:
+Visual Studio 2013 project files are included.  Prereq binaries are available as a zip file in the repository.  The projects also build fine with the Windows Platform SDK tools, v7 or 7.1.  Just use the included bat files in the trunk directory.  Make sure you have WXWIN and BOOST_ROOT path vairables set when building from the command line.
+
+Get prebuilt Boost binaries from: http://boost.teeks99.com/ or SourceForge.
+
+Linux: (Ubuntu 9.10+, 12.04 recommended, or Mint 14+)
+All of the prerequisites are available on Ubuntu as packages easily downloaded and installed through the package distribution service.  Most other Debian based system should be the same, although only Ubuntu/Mint has been tested.  Cmake build scripts are provided.
+
+Apple OSX:
+Coming soon...should work since all the same *nix tools are available.  Need to test.
+
+Notes for web tools:
+The javascript components have been testing against IE6 and up, Firefox 3.5 (Gecko), Google Chrome 8 and Safari 4 (Webkit).  A sample test page with Logician scripting tools is available in the source repository.

@@ -1,0 +1,5 @@
+﻿Logician Suite Commercial Licensing Information
+
+DigiRule Solutions LLC provides its EDSEngine and Relational Object Modeler client libraries under the GNU General Public License v2.0. In additional, a number of other "open source" style licenses are also permitted for use, please see the FOSS License Exception.txt for more details.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL DIGIRULE SOLUTIONS LLC BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

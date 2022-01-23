@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="EDSEngine" Database="">
+  <Project Name="EDSEngine" Path="EDSEngine.project" Active="No"/>
+  <Project Name="EDSEngineTestApp" Path="EDSEngineTestApp/EDSEngineTestApp.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="EDSEngine" ConfigName="Debug"/>
+      <Project Name="EDSEngineTestApp" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="no">
+      <Project Name="EDSEngine" ConfigName="Release"/>
+      <Project Name="EDSEngineTestApp" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
